@@ -1,0 +1,11 @@
+<%= link_to "Create Kitten", new_kitten_path %>
+
+<% @kittens.each do |k| %>
+  <p><%= k.name %></p>
+  <li>Age: <%= k.age %></li>
+  <li>Cuteness:<%= k.cuteness %></li>
+  <li>Softness: <%= k.softness %></li>
+  <%= link_to "Delete", kitten_path(k), method: :delete %>
+  <%= link_to "See Kitten", kitten_path(k) %>
+  <%= link_to "Edit Kitten", edit_kitten_path(k) %>
+<% end %>
